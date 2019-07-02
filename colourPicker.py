@@ -80,8 +80,8 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.MOUSEMOTION:
             if not isFrozen:
-                colour = [ round(redVal*(255-(255/5000)*((event.pos[0]/10)**2+(event.pos[1]/10)**2))) , round(greenVal*((255/50)*(event.pos[0]/10))) , round(blueVal*((255/50)*(event.pos[1]/10))) ]
-                hexColour = convertToHexCol([ round(redVal*(255-(255/5000)*((event.pos[0]/10)**2+(event.pos[1]/10)**2))) , round(greenVal*((255/50)*(event.pos[0]/10))) , round(blueVal*((255/50)*(event.pos[1]/10))) ])
+                colour = [ round(redVal*(255-(255/100)*((event.pos[0]/10)+(event.pos[1]/10)))) , round(greenVal*((255/50)*(event.pos[0]/10))) , round(blueVal*((255/50)*(event.pos[1]/10))) ]
+                hexColour = convertToHexCol([ round(redVal*(255-(255/100)*((event.pos[0]/10)+(event.pos[1]/10)))) , round(greenVal*((255/50)*(event.pos[0]/10))) , round(blueVal*((255/50)*(event.pos[1]/10))) ])
                 writeToOutput(colour)
                 writeToHex(hexColour)
                 colourButton.config(background=hexColour)
